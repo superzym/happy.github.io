@@ -88,7 +88,8 @@
       // 在下一帧调用动画函数
       requestAnimationFrame(animate);
     }
-    var canvas = document.getElementById("fireworks");
+    var canvas=document.querySelector("fireworks");
+   // var canvas = document.getElementById("fireworks");
       var ctx = canvas.getContext("2d");
       var particles = [];
       var maxParticles = 50;
