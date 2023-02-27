@@ -1,25 +1,94 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <title>生日快乐</title>
-    <style>
-      body {
-        background-color: black;
-        overflow: hidden;
+<head>
+  <title>生日快乐祝福</title>
+  <style>
+    body {
+      background-color: #f1c40f;
+    }
+    canvas {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  </style>
+</head>
+<body>
+  <h1>生日快乐！</h1>
+  <p>祝福某人生日快乐，祝他（她）健康、快乐、幸福！</p>
+  <img src="微信图片_20230107221811.png" alt="生日祝福的图片">
+  <audio controls>
+    <source src="生日歌曲的音频地址" type="audio/mpeg">
+    您的浏览器不支持播放音频，请更新您的浏览器。
+  </audio>
+  <script>
+    // 创建canvas元素
+    var canvas = document.createElement("canvas");
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    document.body.appendChild(canvas);
+
+    // 获取canvas上下文
+    var ctx = canvas.getContext("2d");
+
+    // 定义烟花数组
+    var fireworks = [];
+
+    // 定义烟花半径
+    var fireworkRadius = 2;
+
+    // 定义烟花颜色
+    var fireworkColor = "#ffffff";
+
+    // 定义烟花爆炸半径
+    var explosionRadius = 10;
+
+    // 定义烟花爆炸颜色数组
+    var explosionColors = ["#ff4136", "#2ecc40", "#0074d9", "#ff851b", "#b10dc9", "#01ff70"];
+
+    // 定义烟花爆炸粒子数
+    var explosionParticles = 50;
+
+    // 定义烟花粒子数组
+    var particles = [];
+
+    // 定义烟花粒子半径
+    var particleRadius = 2;
+
+    // 定义烟花粒子衰减速度
+    var particleDecay = 0.015;
+
+    // 定义烟花粒子颜色
+    var particleColor = "#ffffff";
+
+    // 定义动画函数
+    function animate() {
+      // 清空canvas
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      // 循环烟花数组
+      for (var i = 0; i < fireworks.length; i++) {
+        // 更新烟花状态
+        fireworks[i].update();
+
+        // 绘制烟花
+        fireworks[i].draw();
       }
-      canvas {
-        position: absolute;
-        top: 0;
-        left: 0;
-        pointer-events: none;
+
+      // 循环粒子数组
+      for (var i = 0; i < particles.length; i++) {
+        // 更新粒子状态
+        particles[i].update();
+
+        // 绘制粒子
+        particles[i].draw();
       }
-    </style>
-  </head>
-  <body>
-    <canvas id="fireworks"></canvas>
-    <script>
-      var canvas = document.getElementById("fireworks");
+
+      // 在下一帧调用动画函数
+      requestAnimationFrame(animate);
+    }
+    var canvas = document.getElementById("fireworks");
       var ctx = canvas.getContext("2d");
       var particles = [];
       var maxParticles = 50;
@@ -82,3 +151,4 @@
     </script>
   </body>
 </html>
+    //
