@@ -1,0 +1,29 @@
+body {
+    background-color: #f1c40f; /* 设置网页背景色 */
+    font-family: Arial, sans-serif; /* 设置字体 */
+    color: #fff; /* 设置文字颜色 */
+    text-align: center; /* 设置文字居中 */
+  }
+  
+  h1 {
+    font-size: 48px; /* 设置标题字体大小 */
+    margin-top: 50px; /* 设置标题顶部间距 */
+  }
+  
+  p {
+    font-size: 24px; /* 设置段落字体大小 */
+    margin-bottom: 50px; /* 设置段落底部间距 */
+  }
+  
+  img {
+    width: 50%; /* 设置图片宽度 */
+    margin: 50px auto; /* 设置图片居中和上下间距 */
+    display: block; /* 设置图片为块级元素 */
+  }
+  
+  audio {
+    width: 50%; /* 设置音频宽度 */
+    margin: 50px auto; /* 设置音频居中和上下间距 */
+    display: block; /* 设置音频为块级元素 */
+  }
+  
